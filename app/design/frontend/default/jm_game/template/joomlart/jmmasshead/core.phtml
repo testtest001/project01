@@ -1,0 +1,9 @@
+<div class="jm-masshead" <?php if(isset($config['background'])): ?> style="background-image: url(<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$config['background']; ?>)" <?php endif; ?>>
+	<div class="jm-masshead-info">
+		<div class="jm-masshead-info-inner">
+			<div class="arrow"></div>
+			<h3 class="jm-masshead-title"><span><?php echo $config['title']; ?></span></h3>
+			<div class="jm-masshead-desc"><span><?php echo $config['description']; ?></span></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<config>
+   <sections>
+        <wavethemes_jmbasetheme>
+            <label>JM Base theme</label>
+            <tab>wavethemes</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+	        	<jmbasethemered translate="label">
+				    <label>JM Basetheme: settings for Red profile</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>99999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<mainnavbg>
+                            <label>Main nav background image</label>
+							<comment>To apply Main NAV background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainnavbg>
+						<mainnavcolor>
+                            <label>Main nav background color</label>
+							<comment>To apply Main NAV background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainnavcolor>
+						<containerbg>
+                            <label>Container content background image</label>
+							<comment>To apply Container Content Background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </containerbg>
+						<containercolor>
+                            <label>Container content background color</label>
+							<comment>To apply Container content Background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </containercolor>
+						<tops1bg>
+                            <label>Slideshow content background image</label>
+							<comment>To apply Slideshow Content Background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tops1bg>
+						<tops1color>
+                            <label>Slideshow content background color</label>
+							<comment>To apply Slideshow content Background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tops1color>
+						<tops2bg>
+                            <label>Static top content background image</label>
+							<comment>To apply Static top Content Background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tops2bg>
+						<tops2color>
+                            <label>Static top content background color</label>
+							<comment>To apply Static top content Background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tops2color>
+						<tops3bg>
+                            <label>Static top3 background image</label>
+							<comment>To apply Static top3 Content Background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tops3bg>
+						<tops3color>
+                            <label>Static top3 background color</label>
+							<comment>To apply Static top3 background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tops3color>
+						<masstopbg>
+                            <label>Static mass top background image</label>
+							<comment>To apply Static mass top Background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </masstopbg>
+						<masstopcolor>
+                            <label>Static mass top background color</label>
+							<comment>To apply Static mass top Background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </masstopcolor>
+						<massbottombg>
+                            <label>Static mass bottom background image</label>
+							<comment>To apply Static mass bottom Background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </massbottombg>
+						<massbottomcolor>
+                            <label>Static mass bottom background color</label>
+							<comment>To apply Static mass bottom Background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </massbottomcolor>
+						<bots1bg>
+                            <label>Static bottom 1 background image</label>
+							<comment>To apply static bottom 1 background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bots1bg>
+						<bots1color>
+                            <label>Static bottom 1 background color</label>
+							<comment>To apply static bottom 1 background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bots1color>
+						<bots2bg>
+                            <label>Static bottom 2 background image</label>
+							<comment>To apply static bottom 2 background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bots2bg>
+						<bots2color>
+                            <label>Static bottom 2 background color</label>
+							<comment>To apply static bottom 2 background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>17</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bots2color>
+						<bots3bg>
+                            <label>Static bottom 3 background image</label>
+							<comment>To apply static bottom 3 background image must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>18</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bots3bg>
+						<bots3color>
+                            <label>Static bottom 3 background color</label>
+							<comment>To apply static bottom 3 background color must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                           <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>19</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bots3color>
+						<bgcart>
+                            <label>Background top cart</label>
+							<comment>To apply background top cart must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bgcart>
+						<bgactive>
+                            <label>Background active menu</label>
+							<comment>To apply background active menu must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bgactive>
+						<button>
+                            <label>Button</label>
+							<comment>To apply button must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button>
+						<buttoncart>
+                            <label>Button cart</label>
+							<comment>To apply button top cart must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </buttoncart>
+						<bestsellertitle>
+                            <label>Best seller title</label>
+							<comment>To apply Background best seller title must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bestsellertitle>
+						<prevnextdetails>
+                            <label>Next preview</label>
+							<comment>To apply Background Next preview details page must be transparent or empty</comment>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </prevnextdetails>
+						
+					
+					</fields>
+            	</jmbasethemered>
+            </groups>
+        </wavethemes_jmbasetheme>
+    </sections>       
+</config>

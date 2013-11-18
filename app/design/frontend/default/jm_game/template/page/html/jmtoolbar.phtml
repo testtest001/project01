@@ -1,0 +1,149 @@
+<?php
+/*!
+ * Theme Name: JM Team
+ * Theme URI: http://www.joomlart.com
+ * Version: 1.0
+ * Description: 
+ * Author: JM Team - Joomlart.com
+ * Author URI: http://www.joomlart.com
+ * 
+ * Powered by Magento
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<div class="main">
+	<div class="inner clearfix">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-1')->toHtml() ?>
+		<!-- BEGIN: MY CART-->
+		<div id="jm-mycart" class="has-toggle">
+			<div class="jmajmxloading">&nbsp;</div> 
+			<div class="btn-toggle mycart-toggle">
+				<i class="icon-shopping-cart"></i>
+				<a class="gotocart" href="<?php echo Mage::getUrl("checkout/cart"); ?>">
+					<?php if(Mage::getSingleton('checkout/session')->getQuote()->getSubtotal() > 0) { 
+						echo Mage::getSingleton('checkout/session')->getQuote()->getItemsSummaryQty().' items';
+					} else {
+						echo $this->__('0 item');
+					} ?> 
+				</a>
+				<span><?php echo $this->__("in your cart") ?></span>
+			</div>
+			<div class="inner-toggle">
+				<?php echo $this->getChildHtml('mycart') ?>
+			</div>
+		</div>
+		<!-- END: MY CART -->
+		<!-- BEGIN: QUICK ACCESS -->
+		<div id="jm-quickaccess" class="quick-access has-toggle">
+			<div class="btn-toggle quickaccess-toggle">
+				<i class="icon-user"></i><strong><?php echo $this->__('Account') ?></strong>
+			</div>
+			<div class="inner-toggle">
+				<div class="shop-access">
+					<?php 
+					if($this->getChildHtml('customer_account_navigation')):
+						echo $this->getChildHtml('customer_account_navigation');
+					endif;
+					?>
+					<?php echo $this->getChildHtml('topLinks');  ?>
+				</div>
+			</div>
+		</div>
+		<!-- END: QUICK ACCESS -->
+		<!-- BEGIN: QUICK ACCESS -->
+		<div id="jm-setting" class="quick-setting has-toggle">
+			<div class="btn-toggle setting-toggle">
+				<i class="icon-globe"></i><strong><?php echo $this->__('Setting') ?></strong>
+			</div>
+			<div class="inner-toggle">
+				<?php echo $this->getChildHtml('store_language') ?>
+				<?php echo $this->getChildHtml('custom_currency_selector') ?>
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('colors')->toHtml() ?>
+			</div>
+		</div>
+		<!-- END: QUICK ACCESS -->
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+(function($) {
+	$("#jm-head #jm-quickaccess,#jm-setting,#jm-mycart").mouseenter(function (){
+		$(this).children().addClass("active");
+		if($("#jmoverlay").length <= 0){
+			jmoverlay = $('<div id="jmoverlay" class="jmoverlay"></div>'); 
+			jmoverlay.appendTo('#jm-wrapper');
+			jmoverlay.bind("click",function(){
+				$("#jm-head #jm-quickaccess,#jm-setting,#jm-mycart").children().removeClass("active");
+				$(this).remove();
+			})
+		}	
+	}).mouseleave(function (){
+		$(this).children().removeClass("active");
+		$("#jmoverlay").remove();
+	});
+
+	$("#jm-search .btn-toggle").click(function(){
+		if($(this).siblings(".inner-toggle").hasClass("active")) {
+
+			$(this).siblings(".inner-toggle").removeClass("active")
+		}else{
+			$("#jm-head").css("z-index",1);
+			$(this).siblings(".inner-toggle").addClass("active"); 
+		}	
+		
+	})
+	$("#jm-search").mouseleave(function(){
+		if($(this).children(".inner-toggle").hasClass("active")) { 
+			$("#jm-head").css("z-index","");
+			$(this).children(".inner-toggle").removeClass("active")
+		}
+	});
+	
+	$("#jm-quickaccess .btn-toggle").hover(function(e){
+		$("#jm-quickaccess").toggleClass("active");
+		if($("#jm-quickaccess").hasClass("active")){
+				if(window.myaccountIScrol !== undefined && window.myaccountIScrol !== null){
+					 window.myaccountIScrol.destroy();
+					 window.myaccountIScrol  = null;
+				}
+				 if($("#myaccountscroll").length){
+				  windowheight = $(window).height()-$("#jm-head").height();
+				  windowheight = windowheight - parseInt($("#jm-quickaccess .inner-toggle").css("padding-top"));
+				  if($("#jm-quickaccess .inner-toggle").height() > windowheight){
+					 $("#myaccountscroll").css("height",windowheight);
+				  }
+				  setTimeout(function(){
+					  window.myaccountIScrol = new iScroll("myaccountscroll",{vScrollbar: true, useTransform: true,hScrollbar: false});	
+				  },100);	
+				 }else{
+					quickaccess = $("#jm-quickaccess .inner-toggle").html();
+					myaccount = $('<div class="inner-togglecontent" />').append($("#jm-quickaccess .inner-toggle").html());
+					myaccount.css({float:"left",height:"auto"});
+					$("#jm-quickaccess .inner-toggle").html("");
+					myaccountscroll = $('<div id="myaccountscroll" />');
+					myaccount.appendTo(myaccountscroll);
+				   
+					windowheight = $(window).height()-$("#jm-head").height();
+					windowheight = windowheight - parseInt($("#jm-quickaccess .inner-toggle").css("padding-top"));
+					myaccountscroll.appendTo($("#jm-quickaccess .inner-toggle"));
+				   
+						setTimeout(function(){
+							  if($("#jm-quickaccess .inner-toggle").height() > windowheight){
+								myaccountscroll.css("height",windowheight);
+								window.myaccountIScrol = new iScroll("myaccountscroll",{vScrollbar: true, useTransform: true,hScrollbar: false});
+								 window.myaccountIScrol.refresh();
+							  }
+
+						},100);
+				   
+				   }
+					
+					
+		}
+
+	});
+})(jQuery);
+//]]>
+</script>

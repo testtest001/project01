@@ -1,0 +1,259 @@
+/*!
+ * Theme Name: JM Team
+ * Theme URI: http://www.joomlart.com
+ * Version: 1.0
+ * Description: 
+ * Author: JM Team - Joomlart.com
+ * Author URI: http://www.joomlart.com
+ * 
+ * Powered by Magento
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+/* MAIN CONTAINER
+--------------------------------------------------------- */
+.wrap {
+	min-width: 1024px;
+}
+
+.main {
+	text-align: left;
+	width: 1000px;
+}
+
+.jm-mask-desc .jm-slide-desc h3 {
+	font-size: 250%;
+}
+
+#jm-tops2 img {
+	width: 980px;
+}
+
+#jm-mass-top .position-9 img {
+	width: 490px;
+	float: left;
+}
+#jm-mass-top .position-10 img {
+	width: 470px;
+	float: left;
+}
+
+#jm-bots1 img{
+	width: 100%;
+}
+
+/*slide*/
+.jm-slide-thumbs-wrap {
+  right: 0 !important;
+  top: 173px;
+  width: 120px !important;
+}
+
+.jm-slide-thumb img {
+  width: 84px;
+  height: 48px;
+}
+
+.jm-slide-thumbs-handles span,
+.jm-slide-thumb {
+	width: 84px !important;
+	height: 48px !important;
+}
+
+.jm-slide-thumbs-wrap {
+  width: 103px !important;
+  height: 350px !important;
+}
+
+.jm-slide-thumbs{
+  height: 350px !important;
+}
+.jm-slide-thumbs-handles {  
+	width: 104px;
+}
+.jm-slide-mask,
+.jm-slide-maskright {
+	display: none !important;
+}
+
+.jm-slide-buttons .jm-slide-next {
+	background: url(../images/next-pre-tablet.png) no-repeat right -35px;
+	right: 25px;
+}
+
+.jm-slide-buttons .jm-slide-prev {
+	background: url(../images/next-pre-tablet.png) no-repeat left 0;
+	left: 10px;
+}
+
+.jm-slide-buttons .jm-slide-next, 
+.jm-slide-buttons .jm-slide-prev {
+  height: 35px;
+  width: 49px;
+}
+
+.jm-mask-desc {
+  bottom: 28px !important;
+  left: 0 !important;
+  padding: 0;
+  width: 450px !important;
+  height: auto !important;
+}
+
+.jm-mask-desc .jm-slide-desc {
+	padding: 20px;
+}
+
+
+.category-products .product-image img, 
+.products-grid .product-image img {
+	width: 100%;
+	height: 305px;
+}
+
+.products-grid-special li.item.first .product-image img{
+	height: 306px;
+}
+
+
+.product-information h5 {
+	font-size: 100%;
+}
+
+.tag-product-list .products-grid li.item:hover .inner, 
+.catalog-category-view .products-grid li.item:hover .inner, 
+.catalogsearch-result-index .products-grid li.item:hover .inner {
+	width: 192px;
+}
+
+.products-grid-special .productoverlaybutton {
+	min-width: 200px;
+	top: 110px;
+}
+
+.products-grid-special .productoverlayinfo {
+  width: 204px;
+}
+
+.products-grid-special li.item .inner {
+  padding: 20px;
+}
+
+.products-grid li.item.first .inner{
+	padding: 19px 20px 20px;
+}
+
+.category-products .products-list  .product-image img {
+	width: 100%;
+	height: auto;
+}
+
+.products-list .add-to-links {
+	border-left: 1px solid #EDEDED;
+	float: right;
+	min-height: 70px;
+	padding: 50px 0 50px 10px;
+	width: 200px;
+}
+
+.products-list .product-shop {
+	float: left;
+	margin: 0 10px;
+	min-height: 180px;
+	padding: 0;
+	position: relative;
+	width: 320px;
+}
+
+.products-grid-anticipated li.first{
+	padding-top: 19px;
+}
+
+.products-grid-anticipated li:first-child.first{
+	padding-top: 0px;
+}
+
+/*details*/
+.product-image .product-image-zoom,
+.product-view .product-shop {
+  width: 705px !important;
+}
+
+.product-image.product-image-zoom{
+  width: 705px !important;
+  height: 470px !important;
+}
+
+.product-view .product-image img {
+	width: 100%;
+}
+
+/*contact*/
+.contact-info {
+  width: 630px;
+}
+
+
+.block-pre-order .desc {
+	margin: 15px 0 59px;
+}
+
+/* checkout */
+#opc-billing.allow.active .form-list select{
+	width: 265px;
+}
+table#checkout-review-table tfoot th,
+table#checkout-review-table tfoot td{
+	vertical-align: middle
+}
+
+table#checkout-review-table tfoot th{
+	border-right: 1px solid #EBEBEB;
+	border-top: 1px solid #EBEBEB;
+}
+
+/* Side bar: block */
+.block .block-title{
+	text-indent: 13px;
+}
+.block.green.block-layered-nav  .block-content{
+	padding: 20px 20px 0px;
+}
+
+/* toolbar */
+.toolbar .view-mode{
+	min-width: 155px;
+}
+
+.more-info {
+	display: none !important;
+}
+
+
+.cms-home .products-grid li.item{
+  width: 25% !important;
+}
+
+.cms-home .products-grid li.item:hover {
+  background: none !important;
+}
+
+.cms-home .products-grid li.item:hover .inner {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  box-shadow: none !important;
+  position: relative;
+  width: auto !important;
+  z-index: 1;
+}
+
+.cms-home .products-grid li.item:hover .inner .product-information h5 a {
+  color: #333;
+}
+
+.cms-home .products-grid li.item:hover .inner .more-info {
+	display: none !important;
+}
+
+.jm-tab-content .products-grid{
+	width: 980px !important;
+}

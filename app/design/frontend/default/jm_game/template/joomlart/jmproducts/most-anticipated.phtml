@@ -1,0 +1,130 @@
+
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+    $baseconfig =  Mage::helper("jmbasetheme")->getactiveprofile();
+   
+    if ($baseconfig) : 
+            $productlistimagewidth = $baseconfig["productlistimagewidth"];
+            $productlistimageheight = $baseconfig["productlistimageheight"];
+            $productgriddeslenght = $baseconfig["productgriddeslenght"];
+            $productgridimageheight = $baseconfig["productgridimageheight"];
+            $productgridimagewidth = $baseconfig["productgridimagewidth"];
+            $showlabel = $baseconfig["showlabel"];
+        else :
+            $productlistimagewidth = 180;
+            $productlistimageheight = 180;
+            $productgriddeslenght = 0;
+            $productgridimageheight = 180;
+            $productgridimagewidth = 180;
+            $showlabel = 0;
+        endif;
+    $storecode = Mage::app()->getStore()->getCode();
+    $default = Mage::getStoreConfig('design/theme/default',$storecode); 
+    $loadingimage = "skin/frontend/default/".$default."/wavethemes/jmbasetheme/profiles/".Mage::helper("jmbasetheme")->getprofile()."/images/".$baseconfig["loadajax"];
+    
+?>
+<?php if($config["ajaxloadmore"]){ ?>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function($) {
+     $("ul.products-grid").jminfinite({
+        columns:<?php echo $config['perrow']; ?>,
+    	itemSelector:'li.pitem',
+    	viewmoretext:'<?php echo $this->__("Load More.."); ?>',
+    	loadalltext:'<?php echo $this->__("That\'s all we have for now <i class=\'icon-smile\'></i>"); ?>',
+    	loadingimage:'<?php echo $loadingimage; ?>',
+    	callback:function(obj,newElements){
+            columns = obj.options.columns;
+            container = obj.options.container;
+            itemSelector = obj.options.itemSelector;
+            width = (100/columns).toString() + "%";
+
+            
+    		    $( newElements ).css("width",width);
+			   // update
+			    $('#item-more').appendTo(container).find('h3:first').show(); 	
+				$(container).find(itemSelector).removeClass("first last");
+				$(container).find(itemSelector).each(function(index,item){
+				if(index%columns == 0){
+                      $(item).addClass("first");
+				}else if(index%columns == (columns-1)){
+                      $(item).addClass("last"); 
+				}				
+			});
+    	}
+
+
+    });
+ });
+ //]]>
+</script>
+<?php } ?>
+			<?php $_collectionSize = $listall2?$listall2->count():0; ?>
+			
+			
+			
+			<?php $i = 0;
+				$width = 100;
+				// -- added by Duchh 15/12/2009
+				$thumbnailw = $config['width'];
+				$thumbnailh = $config['height'];
+				$numberchar = $config['max'];
+
+				if ($config['perrow']) $width = 100/$config['perrow'];
+				$width = "style=\"width:{$width}%;\"";    
+				$return = false;                
+			?>							
+			<?php if($_collectionSize){?>
+			<ul class="products-grid-anticipated">
+			<?php foreach ($listall2->getItems() as $_product){ 
+					$_rowCount = ceil($_collectionSize/$config['perrow']);
+					if ($i%$config['perrow']==0) : $j++; endif;
+					$i++;
+					$product = Mage::getModel('catalog/product')->load($_product->getId());
+					$attribute = $product->getResource()->getAttribute('label');
+					if(is_object($attribute)){
+					 
+						$_options= $attribute->getSource()->getAllOptions(true, true);
+						foreach($_options as $option){
+							  if ($option['value'] == $product->getData("label")){
+								$class =  $option['label'];
+							  }
+						 }		   
+						 $attdefaultvalue = $attribute->getDefaultValue();
+						 $attributeValue = $product->getlabel();
+						 $attributeValueName = $product->getAttributeText('label');
+							 if(strlen($attributeValue) &&  ($attdefaultvalue !== $attributeValue)) { 
+								 $labeltype = $class;   
+								 $labelname = $attributeValueName;     
+								 } 
+								 else {
+								 $labeltype = "";
+						 } 
+					}
+			?> 
+					<li class="item <?php if(($i-1)%$config['perrow']==0): ?> first<?php elseif($i%$config['perrow']==0): ?> last<?php endif; ?> pitem">
+						<div class="product-image">
+							<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
+								<img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(50, 70)->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/>
+							</a>
+						</div>
+						<?php echo $this->getPriceHtml($_product,true, '_jmproduct_' . rand()) ?>
+						<h5>
+							<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">										
+							<?php 
+								if (strlen($_product->getName()) > 30) :
+									echo strip_tags(substr($_product->getName(), 0, 20)).'...';
+								else : 
+									echo $_product->getName();
+								endif;
+							?>
+							</a>
+						</h5>
+						<?php $genre= $_product->getAttributeText('genres');?>
+						<div class="genre">Genre: <?php if($genre) echo($genre); else echo ("N/A");?></div>
+						<?php echo $this->getReviewsSummaryHtml($_product, true, true)?>
+					</li>					
+			<?php }?>		
+			</ul>
+			<?php }?>
